@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Добро пожаловать на курс по Vue 3</h1>
+    <h1>Это страница поста с ID = {{ $route.params.id }}</h1>
   </div>
 </template>
 

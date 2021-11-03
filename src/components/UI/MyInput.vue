@@ -1,15 +1,11 @@
 <template>
-  <input :value='modelValue' @input='updateInput' class='input' :type={type}>
+  <input :value="modelValue" @input="updateInput" class="input" type="text">
 </template>
 
 <script>
 export default {
   name: 'my-input',
   props: {
-    type: {
-      type: String,
-      required: true,
-    },
     modelValue: [String, Number]
   },
   methods: {
@@ -17,13 +13,15 @@ export default {
       this.$emit('update:modelValue', event.target.value)
     }
   }
-};
+}
 </script>
 
 <style scoped>
-  .input {
-    padding: 10px;
-    border: 1px solid teal;
-    width: 100%;
-  }
+.input {
+  width: 100%;
+  border: 1px solid teal;
+  padding: 10px 15px;
+  margin-top: 15px;
+}
+
 </style>

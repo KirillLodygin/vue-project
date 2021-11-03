@@ -1,67 +1,53 @@
 <template>
   <form @submit.prevent>
-    <h4>Название</h4>
-
-    <div class="form__div">
-      <my-input
-        v-model='post.title'
-        :type="type"
-        placeholder="Название"/>
-    </div>
-
-    <div class="form__div">
-      <my-input
-        v-model='post.body'
-        :type="type"
-        placeholder="Содержание"/>
-    </div>
-
+    <h4>Создание поста</h4>
+    <my-input
+      v-focus
+      v-model="post.title"
+      type="text"
+      placeholder="Название"
+    />
+    <my-input
+      v-model="post.body"
+      type="text"
+      placeholder="Описание"
+    />
     <my-button
-      @click='createPost'
-      style='align-self: flex-end'>
+      style="align-self: flex-end; margin-top: 15px"
+      @click="createPost"
+    >
       Создать
     </my-button>
   </form>
 </template>
 
 <script>
-  export default {
-    name: 'PostForm',
-    data() {
-      return {
-        post: {
-          title: '',
-          body: ''
-        },
-        type: 'text'
-      }
-    },
-
-    methods: {
-      createPost() {
-        this.post.id = Date.now()
-        this.$emit('create', this.post)
-        this.post = {
-          title: '',
-          body: ''
-        }
+export default {
+  data() {
+    return {
+      post: {
+        title: '',
+        body: ''
       }
     }
-  };
+  },
+  methods: {
+    createPost() {
+      this.post.id = Date.now();
+      this.$emit('create', this.post)
+      this.post = {
+        title: '',
+        body: ''
+      }
+    }
+  },
+}
 </script>
 
 <style scoped>
-h4 {
-  margin-bottom: 10px;
-}
-
 form {
   display: flex;
   flex-direction: column;
-}
-
-.form__div {
-  margin-bottom: 10px;
 }
 
 </style>

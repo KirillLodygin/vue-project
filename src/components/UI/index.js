@@ -1,7 +1,9 @@
-import MyButton from './MyButton';
-import MyInput from './MyInput';
-import MyDialogModal from './MyDialogModal';
-import MySelect from './MySelect';
-import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
+import MyButton from "@/components/UI/MyButton";
+import MyInput from "@/components/UI/MyInput";
+import MyDialog from "@/components/UI/MyDialog";
 
-export default [MyButton, MyInput, MyDialogModal, PulseLoader];
+export default [
+    MyButton,
+    MyInput,
+    MyDialog
+];
